@@ -1,0 +1,50 @@
+<section>
+  <div class="page-header">
+    <h1>Expenses Report</h1>
+  </div>
+
+  <div class="form-group">
+
+
+    <div class="col-md-6">
+      <label for="startdate">Transaction Start Date:</label>
+      <p class="input-group">
+        <input type="text" id="startDate" name="startDate" class="form-control" readonly datepicker-popup="dd-MMM-yyyy hh:mm:ss a" ng-model="startDate" is-open="status.opened" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
+               close-text="Close" />
+        <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+      </p>
+    </div>
+
+    <timepicker ng-model="startDate" hour-step="1" minute-step="1" show-meridian="true">
+    </timepicker>
+  </div>
+
+  <div class="form-group">
+
+
+    <div class="col-md-6">
+      <label for="startdate">Transaction End Date:</label>
+      <p class="input-group">
+        <input type="text" id="endDate" name="endDate" class="form-control" readonly datepicker-popup="dd-MMM-yyyy hh:mm:ss a" ng-model="endDate"
+               is-open="status1.opened" max-date="'2020-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true"
+               close-text="Close" />
+        <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+      </p>
+    </div>
+
+    <timepicker ng-model="endDate" hour-step="1" minute-step="1" show-meridian="true">
+    </timepicker>
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn-default btn-primary" ng-click="calcAvg(true);">Update</button>
+  </div>
+
+  <div class="alert alert-warning text-center">
+    Average Weekly expenditure = {{avg}}
+  </div>
+</section>

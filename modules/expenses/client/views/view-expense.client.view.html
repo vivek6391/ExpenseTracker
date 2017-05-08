@@ -1,0 +1,29 @@
+<section>
+  <div class="page-header">
+    <h4>Title : {{vm.expense.title}}</h4>
+    <h4>Amount : {{vm.expense.amount}}</h4>
+    <h4>Description : {{vm.expense.description}}</h4>
+    <h4>Transaction Date : {{vm.expense.transactiondate | date:'dd-MMM-yyyy hh:mm:ss a'}}</h4>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.expense.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="expenses.edit({ expenseId: vm.expense._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.expense.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.expense.user"
+            ng-bind="vm.expense.user.displayName"></span>
+      <span ng-if="!vm.expense.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.expense.content"></p>
+</section>

@@ -1,0 +1,32 @@
+<section>
+  <div class="page-header">
+    <h1>Settings</h1>
+  </div>
+  <div class="row">
+    <nav class="col-sm-3 col-md-3">
+      <ul class="nav nav-pills nav-stacked">
+        <li ui-sref-active="active">
+          <a ui-sref="settings.profile">Edit Profile</a>
+        </li>
+        <li ui-sref-active="active">
+          <a ui-sref="settings.picture">Change Profile Picture</a>
+        </li>
+        <li ui-sref-active="active" ng-show="vm.user.provider === 'local'">
+          <a ui-sref="settings.password">Change Password</a>
+        </li>
+<<<<<<< HEAD
+        <!--<li data-ui-sref-active="active">
+          <a data-ui-sref="settings.accounts">Manage Social Accounts</a>
+        </li>-->
+=======
+        <li ui-sref-active="active">
+          <a ui-sref="settings.accounts">Manage Social Accounts</a>
+        </li>
+>>>>>>> 7eedfcc6cf362af8c7363809d50e64d0aa636464
+      </ul>
+    </nav>
+    <div class="col-sm-9 col-md-8 settings-view">
+      <div ui-view></div>
+    </div>
+  </div>
+</section>
